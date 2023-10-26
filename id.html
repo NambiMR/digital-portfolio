@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Profle </title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>function scrollToElement(target) {
+    const element = document.querySelector(target);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      element.classList.add('animate');
+    }
+  }
+  
+  const navigationLinks = document.querySelectorAll('.info a');
+  navigationLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetId = link.getAttribute('href');
+      scrollToElement(targetId);
+    });
+  });
+  
+  const sections = document.querySelectorAll('.section-content');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  });
+  
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+  </script>
+  
+  <section class="main">
+  <div class="profile-card">
+    <div class="image">
+        <img src="mee.jpg" alt="center" height="150" width="150"  id="mee"> 
+    </div>
+    <div class="data">
+      <h2>Nambi Muthu Raja</h2>
+      <span>Information technology student</span>
+    </div>
+    <div class="row">
+      <div class="info">
+        <h3><a href="#about">About</a></h3>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="info">
+        <h3><a href="#education">Education</a></h3>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="info">
+        <h3><a href="#skill">Skill</a></h3>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="info">
+        <h3><a href="#Address">Address</a></h3>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="info">
+        <h3><a href="#contact information">contact information</a></h3>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div><br/>
+    <section id="about">
+        <div class="section-content">
+    <h2>About Me</h2>
+    <p>Hello! This is nambi. I am information technology student. </p>
+        </div>
+    </section>
+    <section id="education">
+        <div class="section-content">
+    <h2>Education</h2>
+    <p>Manonmaniam Univercity,SSB college,BSC Department. </p>
+        </div>
+    </section>
+    <section id="skill">
+        <div class="section-content">
+    <h2>Skill!!</h2>
+
+    <p><li>HTML</li> 
+      <p>The HyperText Markup Language or HTML is the standard markup language for 
+        documents designed to be displayed in a web browser.
+        It defines the meaning and structure of web content.</p>
+    <li>CSS</li>
+    <p>CSS stands for Cascading Style Sheets
+      CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+      CSS saves a lot of work. It can control the layout of multiple web pages all at once
+      External stylesheets are stored in CSS files</p>
+    <li>C & C++</li>
+    <p>C language focuses on the process or method instead of focusing on the data.
+       C++ language focuses on the data instead of focusing on the procedure or method.
+        The inheritance feature assists the child class in reusing the parent class's properties. 
+        The C language offers no support for inheritance.</p>
+    <li>JAVA</li>
+    <p>Java is a widely-used programming language for coding web applications.</p>
+    <li>JAVA SCRIPT</li>
+    <p>Java has been a popular choice among developers for over two decades, 
+      with millions of Java applications in use today. Java is a multi-platform,
+       object-oriented, and network-centric language that can be used as a platform in itself.</p>
+</p>
+        </div>
+    </section>
+    <section id="Address">
+        <div class="section-content">
+    <h2>Address</h2>
+    <p>
+      9/72, North Street,
+      Chockalingapuram -627 651.
+    </p>
+        </div>
+    </section>
+    <section id="contact information">
+      <div class="section-content">
+  <h2>Contact Infomation</h2>
+  <p>
+    Ph Number   :6374618016
+    Email-id    :kuttypaiyan618016@gmail.com</p>
+      </div>
+  </section>
+  </div>
+</section>
+</body>
+</html>
+
+ 
